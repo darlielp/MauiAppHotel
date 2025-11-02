@@ -85,7 +85,16 @@
                     </VerticalStackLayout>
                 </Frame>
 
-                <Button Text="Avançar"  />
+                <Button Text="Avançar"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"
+                CornerRadius="10"/>
+
+                <Button Text="Sobre"
+                BackgroundColor="Transparent"
+                TextColor="{StaticResource Primary}"
+                FontAttributes="Bold"
+                Clicked="Sobre_Clicked"/>
 
             </VerticalStackLayout>
         </Frame>
