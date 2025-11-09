@@ -17,9 +17,10 @@
 
         <Frame Padding="10">
             <VerticalStackLayout>
+                <!-- Seleciona a quantidade de pessoas -->
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
-
+                    <!-- Adultos -->
                     <Label Grid.Row="0" Grid.Column="0"
                            Text="Adultos:" />
 
@@ -33,7 +34,8 @@
                              Minimum="0"
                              Maximum="10"
                              Increment="1" />
-
+                    
+                    <!-- Criancas -->
                     <Label Grid.Row="1" Grid.Column="0"
                            Text="Crianças:" />
 
@@ -48,7 +50,8 @@
                              Maximum="10"
                              Increment="1" />
                 </Grid>
-
+                
+                <!-- Selecionar suite -->
                 <Frame Padding="10" Margin="10">
                     <VerticalStackLayout>
 
@@ -58,10 +61,12 @@
                                TextColor="{StaticResource Primary}"/>
 
                         <Picker x:Name="pck_quarto"
-                                Title="Selecione sua Acomodação" />
+                                Title="Selecione sua Acomodação" 
+                                ItemDisplayBinding="{Binding Descricao}"/>
                     </VerticalStackLayout>
                 </Frame>
 
+                <!-- Seleciona perido da hospedagem -->
                 <Frame Padding="10"
                        Margin="10">
                     <VerticalStackLayout Spacing="10">
@@ -70,13 +75,14 @@
                                TextTransform="Uppercase"
                                FontSize="Subtitle"
                                TextColor="{StaticResource Primary}"/>
-
+                        <!-- Check-in -->
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-in:" />
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
-
+                        <!-- Check-out -->
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-out:" />
                             <DatePicker x:Name="dtpck_checkout"
@@ -84,12 +90,15 @@
                         </HorizontalStackLayout>
                     </VerticalStackLayout>
                 </Frame>
-
+                
+                <!-- Botao avancar -->
                 <Button Text="Avançar"
                 BackgroundColor="{StaticResource Primary}"
                 TextColor="White"
-                CornerRadius="10"/>
-
+                CornerRadius="10"
+                Clicked="Button_Clicked"/>
+                
+                <!-- Botao Sobre -->
                 <Button Text="Sobre"
                 BackgroundColor="Transparent"
                 TextColor="{StaticResource Primary}"

@@ -9,6 +9,13 @@ public partial class Sobre : ContentPage
 
     private async void Voltar_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        try
+        {
+            await Navigation.PopAsync();
+        }
+        catch (Exception ex) 
+        {
+            DisplayAlert("Ops", ex.Message, "Ok");
+        }
     }
 }
